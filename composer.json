@@ -1,0 +1,11 @@
+{
+    "name": "task-force/task-force",
+    "autoload": {
+      "psr-4": {
+           "TaskForce\\": "scr/"
+       }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.0"
+    }
+}
