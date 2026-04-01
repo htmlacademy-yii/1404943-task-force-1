@@ -47,13 +47,7 @@ CREATE TABLE category
   icon VARCHAR(20)
 );
 
-CREATE TABLE files
-(
-  id      INT AUTO_INCREMENT PRIMARY KEY,
-  url     VARCHAR(80) NOT NULL,
-  task_id INT         NOT NULL,
-  FOREIGN KEY (task_id) REFERENCES tasks (id)
-);
+
 CREATE TABLE tasks
 (
   id          INT AUTO_INCREMENT PRIMARY KEY,
@@ -70,5 +64,12 @@ CREATE TABLE tasks
   created_at  DATETIME             DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users (id),
   FOREIGN KEY (category_id) REFERENCES category (id)
-)
+);
 
+CREATE TABLE files
+(
+  id      INT AUTO_INCREMENT PRIMARY KEY,
+  url     VARCHAR(80) NOT NULL,
+  task_id INT         NOT NULL,
+  FOREIGN KEY (task_id) REFERENCES tasks (id)
+);
